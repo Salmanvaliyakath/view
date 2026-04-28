@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Salman Portfolio Website - Node.js + Express
 
 A modern personal portfolio website for an AI/ML Engineer and Generative AI specialist.
@@ -49,5 +48,3 @@ Edit the portfolio object in `server.js` to update:
 - Azure App Service
 - AWS Elastic Beanstalk
 =======
-
->>>>>>> a29d574a7453c00a54a0b5637bf38f121b491ffa
