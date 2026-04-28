@@ -1,50 +1,31 @@
-# Salman Portfolio Website - Node.js + Express
+# Salman Portfolio - GitHub Pages Static Version
 
-A modern personal portfolio website for an AI/ML Engineer and Generative AI specialist.
+This is the static version of the portfolio website, ready for GitHub Pages.
 
-## Tech Stack
+## Files
 
-- Node.js
-- Express.js
-- EJS templates
-- HTML/CSS/JavaScript
+- `index.html`
+- `css/style.css`
+- `js/main.js`
 
-## How to Run
+## Deploy on GitHub Pages
 
-```bash
-npm install
-npm run dev
-```
-
-Open:
+1. Copy these files into your GitHub repository root.
+2. Commit and push:
 
 ```bash
-http://localhost:3000
+git add .
+git commit -m "Convert portfolio to static GitHub Pages site"
+git push
 ```
 
-## Production Run
+3. Open GitHub repo > Settings > Pages.
+4. Source: Deploy from branch.
+5. Branch: main. Folder: / root.
+6. Save.
 
-```bash
-npm install --production
-npm start
+Your site should be available at:
+
+```text
+https://salmanvaliyakath.github.io/view/
 ```
-
-## Customize
-
-Edit the portfolio object in `server.js` to update:
-
-- Name and title
-- Projects
-- Skills
-- Experience
-- Contact links
-- Metrics
-
-## Suggested Deployment Options
-
-- Render
-- Railway
-- DigitalOcean App Platform
-- Azure App Service
-- AWS Elastic Beanstalk
-=======
