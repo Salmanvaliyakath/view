@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Salman Valiyakath, AI/ML Engineer and Generative AI specialist." />
+  <title><%= portfolio.name %> | AI/ML Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#home" class="logo">SV<span>.</span>AI</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header id="home" class="hero section">
+    <div class="hero-content">
+      <p class="eyebrow">Production AI • GenAI • RAG • MLOps</p>
+      <h1>Hi, I’m <span><%= portfolio.name %></span></h1>
+      <h2><%= portfolio.title %></h2>
+      <p class="hero-text"><%= portfolio.summary %></p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="card-title">Core Focus</p>
+      <h3>Reliable AI systems from prototype to production</h3>
+      <ul>
+        <li>RAG architecture and evaluation</li>
+        <li>Agentic workflow automation</li>
+        <li>Scalable cloud ML deployment</li>
+        <li>Monitoring, explainability and governance</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="metrics section compact">
+    <% portfolio.metrics.forEach(metric => { %>
+      <div class="metric-card">
+        <h3><%= metric.value %></h3>
+        <p><%= metric.label %></p>
+      </div>
+    <% }) %>
+  </section>
+
+  <section id="about" class="section two-column">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>AI engineer with strong production and business-impact focus.</h2>
+    </div>
+    <div class="section-text">
+      <p>I specialize in building end-to-end AI systems: problem framing, dataset engineering, model development, deployment, monitoring, and continuous improvement.</p>
+      <p>My experience spans healthcare, BFSI, insurance, enterprise automation, document intelligence, RAG systems, fraud detection, and executive analytics.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-header">
+      <p class="eyebrow">Featured Work</p>
+      <h2>Selected AI, GenAI and Data Products</h2>
+    </div>
+    <div class="project-grid">
+      <% portfolio.projects.forEach(project => { %>
+        <article class="project-card">
+          <p class="project-tag"><%= project.tag %></p>
+          <h3><%= project.title %></h3>
+          <p><strong>Problem:</strong> <%= project.problem %></p>
+          <p><strong>Solution:</strong> <%= project.solution %></p>
+          <p><strong>Impact:</strong> <%= project.impact %></p>
+          <div class="chips">
+            <% project.stack.forEach(item => { %>
+              <span><%= item %></span>
+            <% }) %>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <section class="section architecture">
+    <div class="section-header">
+      <p class="eyebrow">System Design</p>
+      <h2>How I approach production AI architecture</h2>
+    </div>
+    <div class="timeline architecture-flow">
+      <div><span>01</span><strong>Problem Framing</strong><p>Define business goal, data sources, risk, metrics and success criteria.</p></div>
+      <div><span>02</span><strong>Data & Retrieval</strong><p>Build ingestion, chunking, embeddings, metadata, hybrid search and reranking.</p></div>
+      <div><span>03</span><strong>Model / LLM Layer</strong><p>Select models, prompts, tools, guardrails, evaluation and fallback strategy.</p></div>
+      <div><span>04</span><strong>Deployment</strong><p>Deploy with FastAPI, Docker, Kubernetes, SageMaker, Azure ML or vLLM.</p></div>
+      <div><span>05</span><strong>Monitoring</strong><p>Track latency, cost, drift, retrieval quality, hallucinations and user feedback.</p></div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-header">
+      <p class="eyebrow">Skills</p>
+      <h2>Technical Stack</h2>
+    </div>
+    <div class="skills-grid">
+      <% portfolio.skills.forEach(skill => { %>
+        <div class="skill-card">
+          <h3><%= skill.group %></h3>
+          <div class="chips">
+            <% skill.items.forEach(item => { %>
+              <span><%= item %></span>
+            <% }) %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <section id="experience" class="section two-column">
+    <div>
+      <p class="eyebrow">Experience</p>
+      <h2>Career Timeline</h2>
+    </div>
+    <div class="experience-list">
+      <% portfolio.experience.forEach(job => { %>
+        <div class="experience-card">
+          <h3><%= job.role %></h3>
+          <p><%= job.company %></p>
+          <span><%= job.period %></span>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <p class="eyebrow">Writing Ideas</p>
+      <h2>Thought Leadership Topics</h2>
+    </div>
+    <div class="blog-grid">
+      <% portfolio.blogs.forEach(blog => { %>
+        <div class="blog-card"><%= blog %></div>
+      <% }) %>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Let’s build reliable AI systems.</h2>
+    <p><%= portfolio.location %></p>
+    <div class="contact-actions">
+      <a class="btn primary" href="mailto:<%= portfolio.email %>">Email Me</a>
+      <a class="btn secondary" href="<%= portfolio.linkedin %>" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <%= new Date().getFullYear() %> <%= portfolio.name %>. Built with Node.js and Express.</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
